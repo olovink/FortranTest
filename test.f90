@@ -1,49 +1,51 @@
 program hello
   implicit none
 
-  type :: human
+  type :: human_type
     integer :: years
     character(len=10) :: name
   end type
+
+  type :: math_type
+    integer :: a, b
+  end type  
   
-  type(human) :: type_human
-  integer :: a, b, i, result, sum_numbers
+  type(human_type) :: human
+  type(math_type) :: math
+  
+  integer :: i, result, sum_numbers
   logical :: isTrue = .true.
 
   print *, 'Enter your name'
-  read(*, *) type_human%name
+  read(*, *) human%name
 
   print *, 'Enter your years'
-  read(*, *) type_human%years
+  read(*, *) human%years
 
   print *, 'Enter A: '
-  read(*, *) a
+  read(*, *) math%a
 
   print *, 'Enter B: '
-  read(*, *) b
+  read(*, *) math%b
 
   if (isTrue) then
-  	print *, 'a + b = ', sum_numbers(a, b)
-  	print *, 'Your name: ', type_human%name
-  	print *, 'Your years: ', type_human%years
+    call subprogram("a + b = ", sum_numbers(math%a, math%b))
+    print *, 'Your name: ', human%name
+    print *, 'Your years: ', human%years
   else 
-  	print *, 'isTrue = false'
+    print *, 'isTrue = false'
   end if
 
-  test_cycle: do concurrent (i = 1:10)
-  	result = i
+  test_cycle: do i = 1, 10
+    print *, 'cycle input: ',  i 
   end do test_cycle
-
-  print *, 'parrallel result: ' , i
-
-  call subprogram("Hello World", 10)
 
 end program hello
 
 subroutine subprogram(test_message, number)
   implicit none
   integer :: number
-  character(len=11) :: test_message
+  character(len=8) :: test_message
 
   print *, test_message , ' ' , number
 end subroutine subprogram
