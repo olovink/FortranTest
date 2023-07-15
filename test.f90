@@ -7,12 +7,7 @@ program hello
   end type
   
   type(human) :: type_human
-
-  integer :: a = 0
-  integer :: b = 0
-  integer :: i
-  integer :: result
-  integer :: sum_numbers
+  integer :: a, b, i, result, sum_numbers
   logical :: isTrue = .true.
 
   print *, 'Enter your name'
