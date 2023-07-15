@@ -37,7 +37,7 @@ program hello
   end if
 
   test_cycle: do i = 1, 10
-    print *, 'cycle input: ',  i 
+    print *, 'cycle output: ',  i 
   end do test_cycle
 
 end program hello
