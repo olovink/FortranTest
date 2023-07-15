@@ -1,16 +1,25 @@
 program hello
   implicit none
 
+  type :: human
+    integer :: years
+    character(len=10) :: name
+  end type
+  
+  type(human) :: type_human
+
   integer :: a = 0
   integer :: b = 0
   integer :: i
   integer :: result
   integer :: sum_numbers
   logical :: isTrue = .true.
-  character(len=5) :: yourName
 
   print *, 'Enter your name'
-  read(*, *) yourName
+  read(*, *) type_human%name
+
+  print *, 'Enter your years'
+  read(*, *) type_human%years
 
   print *, 'Enter A: '
   read(*, *) a
@@ -20,7 +29,8 @@ program hello
 
   if (isTrue) then
   	print *, 'a + b = ', sum_numbers(a, b)
-  	print *, yourName
+  	print *, 'Your name: ', type_human%name
+  	print *, 'Your years: ', type_human%years
   else 
   	print *, 'isTrue = false'
   end if
@@ -52,4 +62,4 @@ function sum_numbers(first, second) result(norm)
 
    norm = first + second
 
- end function sum_numbers
+end function sum_numbers
