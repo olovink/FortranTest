@@ -1,10 +1,11 @@
 program hello
   implicit none
 
-  integer :: a
-  integer :: b
+  integer :: a = 0
+  integer :: b = 0
   integer :: i
   integer :: result
+  integer :: sum_numbers
   logical :: isTrue = .true.
   character(len=5) :: yourName
 
@@ -18,7 +19,7 @@ program hello
   read(*, *) b
 
   if (isTrue) then
-  	print *, 'a + b = ', a + b
+  	print *, 'a + b = ', sum_numbers(a, b)
   	print *, yourName
   else 
   	print *, 'isTrue = false'
@@ -42,3 +43,13 @@ subroutine subprogram(test_message, number)
 
   print *, test_message , ' ' , number
 end subroutine subprogram
+
+function sum_numbers(first, second) result(norm)
+   implicit none
+   integer :: first
+   integer :: second
+   integer :: norm
+
+   norm = first + second
+
+ end function sum_numbers
