@@ -49,12 +49,10 @@ subroutine subprogram(test_message, number)
   print *, test_message , ' ' , number
 end subroutine subprogram
 
-function sum_numbers(first, second) result(norm)
+function sum_numbers(first, second) result(sum_result)
    implicit none
-   integer :: first
-   integer :: second
-   integer :: norm
+   integer :: first, second, sum_result
 
-   norm = first + second
+   sum_result = first + second
 
 end function sum_numbers
