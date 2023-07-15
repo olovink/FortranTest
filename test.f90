@@ -15,6 +15,9 @@ program hello
   print *, 'Enter B: '
   read(*, *) b
 
-  print *, 'a + b = ', a + b
-  print *, yourNames
+  if (isTrue .eqv. .true.) then
+  	print *, 'a + b = ', a + b
+  	print *, yourName
+  end if
+
 end program hello
