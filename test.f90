@@ -42,7 +42,6 @@ end program hello
 
 subroutine subprogram(test_message, number)
   implicit none
-
   integer :: number
   character(len=11) :: test_message
 
