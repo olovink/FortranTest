@@ -1,8 +1,9 @@
-program hello
+\program hello
   implicit none
 
   integer :: a
   integer :: b
+  integer :: i
   logical :: isTrue = .true.
   character(len=5) :: yourName
 
@@ -18,6 +19,12 @@ program hello
   if (isTrue .eqv. .true.) then
   	print *, 'a + b = ', a + b
   	print *, yourName
+  else 
+  	print *, 'isTrue = false'
   end if
+
+  test_cycle: do i = 1, 10
+  	print *, i 
+  end do test_cycle
 
 end program hello
