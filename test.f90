@@ -53,5 +53,4 @@ function sum_numbers(first, second) result(sum_result)
    integer :: first, second, sum_result
 
    sum_result = first + second
-
 end function sum_numbers
