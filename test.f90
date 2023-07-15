@@ -1,9 +1,10 @@
-\program hello
+program hello
   implicit none
 
   integer :: a
   integer :: b
   integer :: i
+  integer :: result
   logical :: isTrue = .true.
   character(len=5) :: yourName
 
@@ -23,8 +24,10 @@
   	print *, 'isTrue = false'
   end if
 
-  test_cycle: do i = 1, 10
-  	print *, i 
+  test_cycle: do concurrent (i = 1:10)
+  	result = i
   end do test_cycle
+
+  print *, 'parrallel result: ' , i
 
 end program hello
