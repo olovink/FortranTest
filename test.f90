@@ -30,4 +30,15 @@ program hello
 
   print *, 'parrallel result: ' , i
 
+  call subprogram("Hello World", 10)
+
 end program hello
+
+subroutine subprogram(test_message, number)
+  implicit none
+
+  integer :: number
+  character(len=11) :: test_message
+
+  print *, test_message , ' ' , number
+end subroutine subprogram
